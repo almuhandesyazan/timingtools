@@ -8,7 +8,7 @@
 /* Body styles */
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     background: linear-gradient(135deg, #0d1b2a, #1b263b); /* Dark blue gradient */
     color: #fff;
     padding: 20px 10px;
@@ -61,7 +61,7 @@ table {
 
 table th,
 table td {
-    padding: 12px;
+    padding: 10px;
     border-bottom: 1px solid #e0e0e0;
     transition: background-color 0.3s ease;
 }
@@ -109,11 +109,11 @@ table a:hover {
     text-decoration: underline;
 }
 
-/* Responsive design without horizontal scroll */
+/* Responsive design with horizontal table layout */
 @media (max-width: 768px) {
     details {
         margin: 15px 10px;
-        max-width: 100%; /* Full width on smaller screens */
+        max-width: 100%;
     }
 
     table {
@@ -134,22 +134,22 @@ table a:hover {
         font-size: 1.4rem;
     }
 
-    /* Ensure horizontal table layout with text wrapping */
-    table td:nth-child(2) {
-        max-width: 180px; /* Limit Item column width */
-        word-break: break-word; /* Wrap long text */
+    /* Maintain horizontal layout with optimized column widths */
+    table th:nth-child(1),
+    table td:nth-child(1) {
+        width: 20%; /* Image column */
     }
 
     table th:nth-child(2),
     table td:nth-child(2) {
-        width: 50%; /* Item column takes more space */
+        width: 60%; /* Item column */
+        word-break: break-word; /* Wrap long text */
+        max-width: 0; /* Allow flexible wrapping */
     }
 
-    table th:nth-child(1),
-    table td:nth-child(1),
     table th:nth-child(3),
     table td:nth-child(3) {
-        width: 25%; /* Image and Price columns take less space */
+        width: 20%; /* Price column */
     }
 }
 
@@ -176,7 +176,21 @@ table a:hover {
         padding: 15px 5px;
     }
 
+    /* Maintain horizontal layout with further optimized column widths */
+    table th:nth-child(1),
+    table td:nth-child(1) {
+        width: 20%;
+    }
+
+    table th:nth-child(2),
     table td:nth-child(2) {
-        max-width: 120px; /* Further limit Item column width */
+        width: 60%;
+        word-break: break-word;
+        max-width: 0;
+    }
+
+    table th:nth-child(3),
+    table td:nth-child(3) {
+        width: 20%;
     }
 }
