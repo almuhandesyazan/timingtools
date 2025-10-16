@@ -11,21 +11,21 @@ body {
     line-height: 1.6;
     background: linear-gradient(135deg, #0d1b2a, #1b263b); /* Dark blue gradient */
     color: #fff;
-    padding: 30px 15px;
+    padding: 20px 10px;
     direction: ltr;
     min-height: 100vh;
 }
 
 /* Details and summary styles */
 details {
-    margin: 30px auto;
+    margin: 20px auto;
     background-color: #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: block; /* Ensure vertical stacking */
     width: 100%;
-    max-width: 1000px; /* Limit width for readability */
+    max-width: 900px; /* Limit width for readability */
 }
 
 details:hover {
@@ -34,14 +34,14 @@ details:hover {
 }
 
 summary {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    padding: 15px;
+    padding: 12px;
     background: linear-gradient(90deg, #2b2d42, #1b263b); /* Neutral dark gradient */
     color: #fff;
     cursor: pointer;
     text-align: center;
-    border-radius: 12px 12px 0 0;
+    border-radius: 10px 10px 0 0;
     transition: background 0.3s ease;
 }
 
@@ -55,13 +55,13 @@ table {
     border-collapse: collapse;
     background-color: #f9f9f9;
     text-align: center;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 10px 10px;
     overflow: hidden;
 }
 
 table th,
 table td {
-    padding: 15px;
+    padding: 12px;
     border-bottom: 1px solid #e0e0e0;
     transition: background-color 0.3s ease;
 }
@@ -70,12 +70,12 @@ table th {
     background: linear-gradient(90deg, #2b2d42, #1b263b); /* Matching summary gradient */
     color: #fff;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
 }
 
 table td {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #333;
 }
 
@@ -85,7 +85,7 @@ table tr:hover td {
 
 /* Image styles */
 table img {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
@@ -112,7 +112,8 @@ table a:hover {
 /* Responsive design without horizontal scroll */
 @media (max-width: 768px) {
     details {
-        margin: 20px 10px;
+        margin: 15px 10px;
+        max-width: 100%; /* Full width on smaller screens */
     }
 
     table {
@@ -121,34 +122,8 @@ table a:hover {
 
     table th,
     table td {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-
-    table img {
-        max-width: 80px;
-    }
-
-    summary {
-        font-size: 1.5rem;
-    }
-
-    /* Ensure table remains horizontal, adjust text wrapping */
-    table td:nth-child(2) {
-        word-break: break-word; /* Wrap long text */
-        max-width: 200px; /* Limit width of Item column */
-    }
-}
-
-@media (max-width: 480px) {
-    details {
-        margin: 15px 5px;
-    }
-
-    table th,
-    table td {
         padding: 8px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     table img {
@@ -156,14 +131,52 @@ table a:hover {
     }
 
     summary {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+
+    /* Ensure horizontal table layout with text wrapping */
+    table td:nth-child(2) {
+        max-width: 180px; /* Limit Item column width */
+        word-break: break-word; /* Wrap long text */
+    }
+
+    table th:nth-child(2),
+    table td:nth-child(2) {
+        width: 50%; /* Item column takes more space */
+    }
+
+    table th:nth-child(1),
+    table td:nth-child(1),
+    table th:nth-child(3),
+    table td:nth-child(3) {
+        width: 25%; /* Image and Price columns take less space */
+    }
+}
+
+@media (max-width: 480px) {
+    details {
+        margin: 10px 5px;
+    }
+
+    table th,
+    table td {
+        padding: 6px;
+        font-size: 0.75rem;
+    }
+
+    table img {
+        max-width: 50px;
+    }
+
+    summary {
+        font-size: 1.2rem;
     }
 
     body {
-        padding: 20px 5px;
+        padding: 15px 5px;
     }
 
     table td:nth-child(2) {
-        max-width: 150px; /* Further limit Item column width */
+        max-width: 120px; /* Further limit Item column width */
     }
 }
