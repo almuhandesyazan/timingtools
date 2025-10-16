@@ -1,0 +1,176 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b); /* Dark blue gradient */
+    color: #fff;
+    padding: 30px 15px;
+    direction: ltr;
+    min-height: 100vh;
+}
+
+/* Details and summary styles */
+details {
+    margin: 30px 0;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Ensure vertical stacking */
+    width: 100%;
+    max-width: 1000px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+details:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+summary {
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 15px;
+    background: linear-gradient(90deg, #2b2d42, #1b263b); /* Neutral dark gradient */
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+    transition: background 0.3s ease;
+}
+
+summary:hover {
+    background: linear-gradient(90deg, #3e4b6b, #2b2d42);
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+table th {
+    background: linear-gradient(90deg, #2b2d42, #1b263b); /* Matching summary gradient */
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+table td {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+table tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* Image styles */
+table img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+table img:hover {
+    transform: scale(1.05);
+}
+
+/* Link styles */
+table a {
+    color: #0077b6;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+table a:hover {
+    color: #023e8a;
+    text-decoration: underline;
+}
+
+/* Responsive design without horizontal scroll */
+@media (max-width: 768px) {
+    details {
+        margin: 20px 10px;
+    }
+
+    table {
+        display: table; /* Keep table layout */
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    table img {
+        max-width: 80px;
+    }
+
+    summary {
+        font-size: 1.5rem;
+    }
+
+    /* Stack table cells vertically on small screens */
+    table tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    table th,
+    table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    details {
+        margin: 15px 5px;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    table img {
+        max-width: 60px;
+    }
+
+    summary {
+        font-size: 1.3rem;
+    }
+
+    body {
+        padding: 20px 5px;
+    }
+}
