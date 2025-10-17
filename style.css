@@ -5,6 +5,24 @@
     box-sizing: border-box;
 }
 
+td {
+    font-weight: bold;
+}
+.logo {
+    width: max-content;
+    margin: 0 auto;
+    display: block;
+}
+.country {
+        background: #c00d0d;
+    width: 50%;
+    border-radius: 50px;
+    padding: 2px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
 /* Body styles */
 body {
     font-family: 'Poppins', sans-serif;
